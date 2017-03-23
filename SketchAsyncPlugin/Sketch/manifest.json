@@ -1,0 +1,50 @@
+{
+  "author" : "",
+  "commands" : [
+    {
+      "script" : "script.cocoascript",
+      "name" : "run",
+      "handlers" : {
+        "run" : "onRun",
+      },
+      "identifier" : "com.sketchasync.run"
+    },
+    {
+      "script" : "script.cocoascript",
+      "name" : "runObjc",
+      "handlers" : {
+        "run" : "onRunObjc",
+      },
+      "identifier" : "com.sketchasync.runObjc"
+    },
+    {
+      "script" : "script.cocoascript",
+      "name" : "runObjcAsync",
+      "handlers" : {
+        "run" : "onRunObjcAsync",
+      },
+      "identifier" : "com.sketchasync.runObjcAsync",
+    },
+    {
+        "script" : "script.cocoascript",
+        "handlers" : {
+            "actions" : {
+                "SketchAsync.finish" : "onSketchAsyncFinish",
+            }
+        }
+    }
+  ],
+  "menu" : {
+      "items" : [
+         "com.sketchasync.run",
+         "com.sketchasync.runObjc",
+         "com.sketchasync.runObjcAsync",
+    ],
+    "title" : "SketchAsync"
+  },
+  "identifier" : "com.example.sketch.eb8e936a-f56f-48ca-91cb-096c21ac8e9c",
+  "version" : "1.0",
+  "description" : "",
+  "authorEmail" : "",
+  "name" : "SketchAsync"
+}

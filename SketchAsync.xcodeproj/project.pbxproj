@@ -10,6 +10,11 @@
 		1A8BAF4F1E83D2A000BD0591 /* SketchAsync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8BAF451E83D2A000BD0591 /* SketchAsync.framework */; };
 		1A8BAF541E83D2A000BD0591 /* SketchAsyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8BAF531E83D2A000BD0591 /* SketchAsyncTests.m */; };
 		1A8BAF561E83D2A000BD0591 /* SketchAsync.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A8BAF481E83D2A000BD0591 /* SketchAsync.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A8BAF601E83D2BF00BD0591 /* SketchAsync.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8BAF5F1E83D2BF00BD0591 /* SketchAsync.m */; };
+		1A8BAF641E83D3D300BD0591 /* SketchAsync.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A8BAF611E83D39900BD0591 /* SketchAsync.js */; };
+		1A8BAF7D1E83D55000BD0591 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A8BAF791E83D54B00BD0591 /* Resources */; };
+		1A8BAF7E1E83D55000BD0591 /* Sketch in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A8BAF7A1E83D54B00BD0591 /* Sketch */; };
+		1A8BAF821E83D57D00BD0591 /* SketchAsync.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A8BAF451E83D2A000BD0591 /* SketchAsync.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,7 +25,48 @@
 			remoteGlobalIDString = 1A8BAF441E83D2A000BD0591;
 			remoteInfo = SketchAsync;
 		};
+		1A8BAF7F1E83D56A00BD0591 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A8BAF3C1E83D2A000BD0591 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A8BAF441E83D2A000BD0591;
+			remoteInfo = SketchAsync;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1A8BAF631E83D3C500BD0591 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 1;
+			files = (
+				1A8BAF641E83D3D300BD0591 /* SketchAsync.js in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A8BAF711E83D4E800BD0591 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents;
+			dstSubfolderSpec = 1;
+			files = (
+				1A8BAF7D1E83D55000BD0591 /* Resources in CopyFiles */,
+				1A8BAF7E1E83D55000BD0591 /* Sketch in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A8BAF811E83D57000BD0591 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Sketch;
+			dstSubfolderSpec = 1;
+			files = (
+				1A8BAF821E83D57D00BD0591 /* SketchAsync.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1A8BAF451E83D2A000BD0591 /* SketchAsync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SketchAsync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +75,12 @@
 		1A8BAF4E1E83D2A000BD0591 /* SketchAsyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SketchAsyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A8BAF531E83D2A000BD0591 /* SketchAsyncTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SketchAsyncTests.m; sourceTree = "<group>"; };
 		1A8BAF551E83D2A000BD0591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A8BAF5F1E83D2BF00BD0591 /* SketchAsync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SketchAsync.m; sourceTree = "<group>"; };
+		1A8BAF611E83D39900BD0591 /* SketchAsync.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = SketchAsync.js; sourceTree = "<group>"; };
+		1A8BAF691E83D46100BD0591 /* SketchAsync.sketchplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SketchAsync.sketchplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A8BAF6B1E83D46100BD0591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A8BAF791E83D54B00BD0591 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		1A8BAF7A1E83D54B00BD0591 /* Sketch */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sketch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +99,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1A8BAF661E83D46100BD0591 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +114,7 @@
 			children = (
 				1A8BAF471E83D2A000BD0591 /* SketchAsync */,
 				1A8BAF521E83D2A000BD0591 /* SketchAsyncTests */,
+				1A8BAF6A1E83D46100BD0591 /* SketchAsyncPlugin */,
 				1A8BAF461E83D2A000BD0591 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +124,7 @@
 			children = (
 				1A8BAF451E83D2A000BD0591 /* SketchAsync.framework */,
 				1A8BAF4E1E83D2A000BD0591 /* SketchAsyncTests.xctest */,
+				1A8BAF691E83D46100BD0591 /* SketchAsync.sketchplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				1A8BAF481E83D2A000BD0591 /* SketchAsync.h */,
+				1A8BAF5F1E83D2BF00BD0591 /* SketchAsync.m */,
+				1A8BAF611E83D39900BD0591 /* SketchAsync.js */,
 				1A8BAF491E83D2A000BD0591 /* Info.plist */,
 			);
 			path = SketchAsync;
@@ -84,6 +147,16 @@
 				1A8BAF551E83D2A000BD0591 /* Info.plist */,
 			);
 			path = SketchAsyncTests;
+			sourceTree = "<group>";
+		};
+		1A8BAF6A1E83D46100BD0591 /* SketchAsyncPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				1A8BAF791E83D54B00BD0591 /* Resources */,
+				1A8BAF7A1E83D54B00BD0591 /* Sketch */,
+				1A8BAF6B1E83D46100BD0591 /* Info.plist */,
+			);
+			path = SketchAsyncPlugin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +181,7 @@
 				1A8BAF411E83D2A000BD0591 /* Frameworks */,
 				1A8BAF421E83D2A000BD0591 /* Headers */,
 				1A8BAF431E83D2A000BD0591 /* Resources */,
+				1A8BAF631E83D3C500BD0591 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -136,6 +210,27 @@
 			productReference = 1A8BAF4E1E83D2A000BD0591 /* SketchAsyncTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		1A8BAF681E83D46100BD0591 /* SketchAsyncPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A8BAF6C1E83D46100BD0591 /* Build configuration list for PBXNativeTarget "SketchAsyncPlugin" */;
+			buildPhases = (
+				1A8BAF651E83D46100BD0591 /* Sources */,
+				1A8BAF661E83D46100BD0591 /* Frameworks */,
+				1A8BAF671E83D46100BD0591 /* Resources */,
+				1A8BAF711E83D4E800BD0591 /* CopyFiles */,
+				1A8BAF811E83D57000BD0591 /* CopyFiles */,
+				1A8BAF831E83D60D00BD0591 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A8BAF801E83D56A00BD0591 /* PBXTargetDependency */,
+			);
+			name = SketchAsyncPlugin;
+			productName = SketchAsyncPlugin;
+			productReference = 1A8BAF691E83D46100BD0591 /* SketchAsync.sketchplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -150,6 +245,10 @@
 						ProvisioningStyle = Automatic;
 					};
 					1A8BAF4D1E83D2A000BD0591 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+					1A8BAF681E83D46100BD0591 = {
 						CreatedOnToolsVersion = 8.2;
 						ProvisioningStyle = Automatic;
 					};
@@ -169,6 +268,7 @@
 			targets = (
 				1A8BAF441E83D2A000BD0591 /* SketchAsync */,
 				1A8BAF4D1E83D2A000BD0591 /* SketchAsyncTests */,
+				1A8BAF681E83D46100BD0591 /* SketchAsyncPlugin */,
 			);
 		};
 /* End PBXProject section */
@@ -188,13 +288,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1A8BAF671E83D46100BD0591 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A8BAF831E83D60D00BD0591 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Installing ${WRAPPER_NAME} to ~/Library/Application\\ Support/com.bohemiancoding.sketch3/Plugins/\"\ncp -rf ${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME} ~/Library/Application\\ Support/com.bohemiancoding.sketch3/Plugins/\necho \"... Finished!\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1A8BAF401E83D2A000BD0591 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A8BAF601E83D2BF00BD0591 /* SketchAsync.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +330,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1A8BAF651E83D46100BD0591 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -213,6 +344,11 @@
 			isa = PBXTargetDependency;
 			target = 1A8BAF441E83D2A000BD0591 /* SketchAsync */;
 			targetProxy = 1A8BAF501E83D2A000BD0591 /* PBXContainerItemProxy */;
+		};
+		1A8BAF801E83D56A00BD0591 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A8BAF441E83D2A000BD0591 /* SketchAsync */;
+			targetProxy = 1A8BAF7F1E83D56A00BD0591 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -370,6 +506,32 @@
 			};
 			name = Release;
 		};
+		1A8BAF6D1E83D46100BD0591 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SketchAsyncPlugin/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = io.magicsketch.SketchAsyncPlugin;
+				PRODUCT_NAME = SketchAsync;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = sketchplugin;
+			};
+			name = Debug;
+		};
+		1A8BAF6E1E83D46100BD0591 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SketchAsyncPlugin/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = io.magicsketch.SketchAsyncPlugin;
+				PRODUCT_NAME = SketchAsync;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = sketchplugin;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -395,6 +557,14 @@
 			buildConfigurations = (
 				1A8BAF5D1E83D2A000BD0591 /* Debug */,
 				1A8BAF5E1E83D2A000BD0591 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1A8BAF6C1E83D46100BD0591 /* Build configuration list for PBXNativeTarget "SketchAsyncPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A8BAF6D1E83D46100BD0591 /* Debug */,
+				1A8BAF6E1E83D46100BD0591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

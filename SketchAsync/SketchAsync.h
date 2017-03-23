@@ -17,3 +17,6 @@ FOUNDATION_EXPORT const unsigned char SketchAsyncVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <SketchAsync/PublicHeader.h>
 
 
+@interface SketchAsync : NSObject
+
+@end

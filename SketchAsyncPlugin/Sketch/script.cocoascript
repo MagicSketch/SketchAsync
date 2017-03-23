@@ -1,0 +1,25 @@
+@import 'SketchAsync.framework/SketchAsync.js'
+
+var onRun = function(context) {
+    context.document.showMessage("onRun");
+};
+
+
+var onRunObjc = function(context) {
+    var async = SketchAsync.alloc().init();
+    var message = async.runSomething();
+    context.document.showMessage(message);
+};
+
+var onRunObjcAsync = function(context) {
+    context.document.showMessage("running async for 3 seconds...");
+    var async = SketchAsync.alloc().init();
+    async.runSomethingInBackgroundForSeconds(3);
+};
+
+var onSketchAsyncFinish = function(context) {
+    log("js context: " + context);
+    log("js onSketchAsyncFinish");
+    var duration = context.actionContext.SketchAsyncDuration;
+    context.actionContext.document.showMessage("onSketchAsyncFinish: " + duration + " seconds");
+};
