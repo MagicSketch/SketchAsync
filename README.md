@@ -5,7 +5,17 @@ SketchAsync
 
 Execute "Plugin > SketchAsync > runObjcAsync"
 
+```javascript
+var onRunObjcAsync = function(context) {
+    context.document.showMessage("running async for 3 seconds...");
+    var async = SketchAsync.alloc().init();
+    async.runSomethingInBackgroundForSeconds(3);
+};
+```
+
 ```objective-c
+@implementation SketchAsync
+
 - (void)runSomethingInBackgroundForSeconds:(NSTimeInterval)seconds {
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(seconds * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -24,10 +34,10 @@ Execute "Plugin > SketchAsync > runObjcAsync"
 
     });
 
-
     // At the end of dispatch_after, `SketchAsync.finish` event will be emitted
-
 }
+
+@end
 ```
 
 ### Registering for SketchAsync.finish
