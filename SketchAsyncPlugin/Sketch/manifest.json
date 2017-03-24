@@ -26,6 +26,14 @@
       "identifier" : "com.sketchasync.runObjcAsync",
     },
     {
+      "script" : "script.cocoascript",
+      "name" : "runObjcAsyncCompletionBlock",
+      "handlers" : {
+        "run" : "onRunObjcAsyncCompletionBlock",
+      },
+      "identifier" : "com.sketchasync.runObjcAsyncCompletionBlock",
+    },
+    {
         "script" : "script.cocoascript",
         "handlers" : {
             "actions" : {
@@ -39,6 +47,7 @@
          "com.sketchasync.run",
          "com.sketchasync.runObjc",
          "com.sketchasync.runObjcAsync",
+         "com.sketchasync.runObjcAsyncCompletionBlock",
     ],
     "title" : "SketchAsync"
   },

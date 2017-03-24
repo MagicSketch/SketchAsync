@@ -23,3 +23,21 @@ var onSketchAsyncFinish = function(context) {
     var duration = context.actionContext.SketchAsyncDuration;
     context.actionContext.document.showMessage("onSketchAsyncFinish: " + duration + " seconds");
 };
+
+var onRunObjcAsyncCompletionBlock = function(context) {
+
+    var dictionary = NSMutableDictionary.alloc().init()
+dictionary.setValue_forKey_(function run() {
+log("something");
+}, "block")
+
+log("dict: " + dictionary);
+log("block: " + dictionary.block);
+
+
+    context.document.showMessage("running async for 3 seconds...");
+    var async = SketchAsync.alloc().init();
+    async.runSomethingInBackgroundForSeconds_closure_(3, function () {
+        log("something");
+    });
+}

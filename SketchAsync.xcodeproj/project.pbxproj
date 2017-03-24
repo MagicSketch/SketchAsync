@@ -15,6 +15,7 @@
 		1A8BAF7D1E83D55000BD0591 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A8BAF791E83D54B00BD0591 /* Resources */; };
 		1A8BAF7E1E83D55000BD0591 /* Sketch in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A8BAF7A1E83D54B00BD0591 /* Sketch */; };
 		1A8BAF821E83D57D00BD0591 /* SketchAsync.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A8BAF451E83D2A000BD0591 /* SketchAsync.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AAC02761E85182B006D5170 /* Mocha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC02751E85182B006D5170 /* Mocha.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		1A8BAF6B1E83D46100BD0591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A8BAF791E83D54B00BD0591 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 		1A8BAF7A1E83D54B00BD0591 /* Sketch */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sketch; sourceTree = "<group>"; };
+		1AAC02751E85182B006D5170 /* Mocha.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mocha.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AAC02761E85182B006D5170 /* Mocha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +115,7 @@
 		1A8BAF3B1E83D2A000BD0591 = {
 			isa = PBXGroup;
 			children = (
+				1AAC02751E85182B006D5170 /* Mocha.framework */,
 				1A8BAF471E83D2A000BD0591 /* SketchAsync */,
 				1A8BAF521E83D2A000BD0591 /* SketchAsyncTests */,
 				1A8BAF6A1E83D46100BD0591 /* SketchAsyncPlugin */,
@@ -455,6 +459,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = SketchAsync/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -474,6 +482,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = SketchAsync/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -551,6 +563,7 @@
 				1A8BAF5B1E83D2A000BD0591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A8BAF5C1E83D2A000BD0591 /* Build configuration list for PBXNativeTarget "SketchAsyncTests" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +572,7 @@
 				1A8BAF5E1E83D2A000BD0591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A8BAF6C1E83D46100BD0591 /* Build configuration list for PBXNativeTarget "SketchAsyncPlugin" */ = {
 			isa = XCConfigurationList;
@@ -567,6 +581,7 @@
 				1A8BAF6E1E83D46100BD0591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

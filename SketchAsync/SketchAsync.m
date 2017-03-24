@@ -8,6 +8,10 @@
 
 #import "SketchAsync.h"
 @import AppKit;
+@import JavaScriptCore;
+#import <Mocha/Mocha.h>
+#import <Mocha/MOClosure.h>
+
 #define SALog(fmt, ...) NSLog((@"SketchAsync (Sketch Plugin) %s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 
 @implementation SketchAsync
@@ -54,6 +58,15 @@
 
     });
 
+}
+
+- (void)runSomethingInBackgroundForSeconds:(NSTimeInterval)seconds closure:(MOJavaScriptObject *)closure {
+
+
+
+    NSLog(@"closure: %@", closure);
+    [(id)closure callFunctionWithName:@"run" withArguments:nil];
+    NSLog(@"called");
 }
 
 @end
