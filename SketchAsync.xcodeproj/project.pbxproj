@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A5E0E791E89324900636379 /* SketchAsyncHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A5E0E771E89324900636379 /* SketchAsyncHelper.h */; };
+		1A5E0E7A1E89324900636379 /* SketchAsyncHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5E0E781E89324900636379 /* SketchAsyncHelper.m */; };
 		1A8BAF4F1E83D2A000BD0591 /* SketchAsync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8BAF451E83D2A000BD0591 /* SketchAsync.framework */; };
 		1A8BAF541E83D2A000BD0591 /* SketchAsyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8BAF531E83D2A000BD0591 /* SketchAsyncTests.m */; };
 		1A8BAF561E83D2A000BD0591 /* SketchAsync.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A8BAF481E83D2A000BD0591 /* SketchAsync.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -70,6 +72,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A5E0E771E89324900636379 /* SketchAsyncHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SketchAsyncHelper.h; sourceTree = "<group>"; };
+		1A5E0E781E89324900636379 /* SketchAsyncHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SketchAsyncHelper.m; sourceTree = "<group>"; };
 		1A8BAF451E83D2A000BD0591 /* SketchAsync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SketchAsync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A8BAF481E83D2A000BD0591 /* SketchAsync.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SketchAsync.h; sourceTree = "<group>"; };
 		1A8BAF491E83D2A000BD0591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				1A8BAF5F1E83D2BF00BD0591 /* SketchAsync.m */,
 				1A8BAF611E83D39900BD0591 /* SketchAsync.js */,
 				1A8BAF491E83D2A000BD0591 /* Info.plist */,
+				1A5E0E771E89324900636379 /* SketchAsyncHelper.h */,
+				1A5E0E781E89324900636379 /* SketchAsyncHelper.m */,
 			);
 			path = SketchAsync;
 			sourceTree = "<group>";
@@ -171,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A8BAF561E83D2A000BD0591 /* SketchAsync.h in Headers */,
+				1A5E0E791E89324900636379 /* SketchAsyncHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5E0E7A1E89324900636379 /* SketchAsyncHelper.m in Sources */,
 				1A8BAF601E83D2BF00BD0591 /* SketchAsync.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

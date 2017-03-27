@@ -9,8 +9,7 @@
 #import "SketchAsync.h"
 @import AppKit;
 @import JavaScriptCore;
-#import <Mocha/Mocha.h>
-#import <Mocha/MOClosure.h>
+#import "SketchAsyncHelper.h"
 
 #define SALog(fmt, ...) NSLog((@"SketchAsync (Sketch Plugin) %s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 
@@ -60,13 +59,32 @@
 
 }
 
+
 - (void)runSomethingInBackgroundForSeconds:(NSTimeInterval)seconds closure:(MOJavaScriptObject *)closure {
 
+    NSString *stringResult = [SketchAsyncHelper callJavaScriptObject:closure withArgumentsInArray:@[@2, @3]];
 
-
-    NSLog(@"closure: %@", closure);
-    [(id)closure callFunctionWithName:@"run" withArguments:nil];
-    NSLog(@"called");
+    NSLog(@"result %@", stringResult);
 }
+
+
+- (void)runSomethingInBackground:(MOJavaScriptObject *)closure onCompletion:(MOJavaScriptObject *)completion {
+
+
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        // execute closure
+
+        NSString *stringResult = [SketchAsyncHelper callJavaScriptObject:closure withArgumentsInArray:@[]];
+
+ //      dispatch_async(dispatch_get_main_queue(), ^{
+            // completion
+
+            [SketchAsyncHelper callJavaScriptObject:completion withArgumentsInArray:@[stringResult]];
+
+            NSLog(@"finished running something asynchroniously");
+//        });
+//    });
+}
+
 
 @end

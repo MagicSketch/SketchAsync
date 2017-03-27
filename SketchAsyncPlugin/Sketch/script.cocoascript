@@ -37,7 +37,21 @@ log("block: " + dictionary.block);
 
     context.document.showMessage("running async for 3 seconds...");
     var async = SketchAsync.alloc().init();
-    async.runSomethingInBackgroundForSeconds_closure_(3, function () {
-        log("something");
+    /*
+    async.runSomethingInBackgroundForSeconds_closure_(3, function (a, b) {
+            log("running runSomethingInBackgroundForSeconds");
+            var result = a + b;
+            log("a + b = " + result);
+            return result;
+        });
+    */
+
+    async.runSomethingInBackground_onCompletion_(function () {
+        log("running runSomethingInBackground_onCompletion_");
+        return 6;
+    },
+    function(result) {
+        log("onCompletion: " + result);
     });
+
 }
