@@ -13,7 +13,7 @@ var onRunObjc = function(context) {
 var onRunObjcAsync = function(context) {
     context.document.showMessage("running async for 3 seconds...");
     var async = SketchAsync.alloc().init();
-    async.runSomethingInBackgroundForSeconds(3);
+    async.runInBackgroundForSeconds(3);
 };
 
 var onSketchAsyncFinish = function(context) {
@@ -28,8 +28,8 @@ var onRunObjcAsyncCompletionBlock = function(context) {
     context.document.showMessage("running async for 3 seconds...");
     var async = SketchAsync.alloc().init();
     /*
-    async.runSomethingInBackgroundForSeconds_closure_(3, function (a, b) {
-            log("running runSomethingInBackgroundForSeconds");
+    async.runInBackgroundForSeconds_closure_(3, function (a, b) {
+            log("running runInBackgroundForSeconds");
             var result = a + b;
             log("a + b = " + result);
             return result;
@@ -37,9 +37,9 @@ var onRunObjcAsyncCompletionBlock = function(context) {
     */
 
     coscript.setShouldKeepAround(true);
-    async.runSomethingInBackground_onCompletion_(function (a, b) {
-        log("running runSomethingInBackground_onCompletion_");
-        return a + b;
+    async.runInBackground_onCompletion_(function () {
+        log("running runInBackground_onCompletion_");
+        return 1 + 5;
     },
     function(result) {
 

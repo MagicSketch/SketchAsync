@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1482801E8BA34D00C71FE1 /* SketchAsyncTests.js in Resources */ = {isa = PBXBuildFile; fileRef = 1A14827F1E8BA34D00C71FE1 /* SketchAsyncTests.js */; };
+		1A1482861E8BAAA700C71FE1 /* Mocha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC02751E85182B006D5170 /* Mocha.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A1482881E8BAD4000C71FE1 /* Mocha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC02751E85182B006D5170 /* Mocha.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A14828A1E8BAD9800C71FE1 /* Mocha.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1AAC02751E85182B006D5170 /* Mocha.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1A14828C1E8BAE7700C71FE1 /* CocoaScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A14828B1E8BAE7700C71FE1 /* CocoaScript.framework */; };
+		1A14828D1E8BAE8900C71FE1 /* CocoaScript.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A14828B1E8BAE7700C71FE1 /* CocoaScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A5E0E791E89324900636379 /* SketchAsyncHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A5E0E771E89324900636379 /* SketchAsyncHelper.h */; };
 		1A5E0E7A1E89324900636379 /* SketchAsyncHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5E0E781E89324900636379 /* SketchAsyncHelper.m */; };
 		1A8BAF4F1E83D2A000BD0591 /* SketchAsync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8BAF451E83D2A000BD0591 /* SketchAsync.framework */; };
@@ -17,17 +23,9 @@
 		1A8BAF7D1E83D55000BD0591 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A8BAF791E83D54B00BD0591 /* Resources */; };
 		1A8BAF7E1E83D55000BD0591 /* Sketch in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A8BAF7A1E83D54B00BD0591 /* Sketch */; };
 		1A8BAF821E83D57D00BD0591 /* SketchAsync.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A8BAF451E83D2A000BD0591 /* SketchAsync.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1AAC02761E85182B006D5170 /* Mocha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC02751E85182B006D5170 /* Mocha.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1A8BAF501E83D2A000BD0591 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1A8BAF3C1E83D2A000BD0591 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1A8BAF441E83D2A000BD0591;
-			remoteInfo = SketchAsync;
-		};
 		1A8BAF7F1E83D56A00BD0591 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A8BAF3C1E83D2A000BD0591 /* Project object */;
@@ -38,6 +36,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		1A1482891E8BAD9000C71FE1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1A14828D1E8BAE8900C71FE1 /* CocoaScript.framework in CopyFiles */,
+				1A14828A1E8BAD9800C71FE1 /* Mocha.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1A8BAF631E83D3C500BD0591 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -72,6 +81,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A14827F1E8BA34D00C71FE1 /* SketchAsyncTests.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = SketchAsyncTests.js; sourceTree = "<group>"; };
+		1A1482841E8BA5CF00C71FE1 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		1A14828B1E8BAE7700C71FE1 /* CocoaScript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaScript.framework; sourceTree = "<group>"; };
 		1A5E0E771E89324900636379 /* SketchAsyncHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SketchAsyncHelper.h; sourceTree = "<group>"; };
 		1A5E0E781E89324900636379 /* SketchAsyncHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SketchAsyncHelper.m; sourceTree = "<group>"; };
 		1A8BAF451E83D2A000BD0591 /* SketchAsync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SketchAsync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AAC02761E85182B006D5170 /* Mocha.framework in Frameworks */,
+				1A1482861E8BAAA700C71FE1 /* Mocha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +115,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A8BAF4F1E83D2A000BD0591 /* SketchAsync.framework in Frameworks */,
+				1A1482881E8BAD4000C71FE1 /* Mocha.framework in Frameworks */,
+				1A14828C1E8BAE7700C71FE1 /* CocoaScript.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,14 +130,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1482831E8BA5CF00C71FE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A1482841E8BA5CF00C71FE1 /* JavaScriptCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1A8BAF3B1E83D2A000BD0591 = {
 			isa = PBXGroup;
 			children = (
+				1A14828B1E8BAE7700C71FE1 /* CocoaScript.framework */,
 				1AAC02751E85182B006D5170 /* Mocha.framework */,
 				1A8BAF471E83D2A000BD0591 /* SketchAsync */,
 				1A8BAF521E83D2A000BD0591 /* SketchAsyncTests */,
 				1A8BAF6A1E83D46100BD0591 /* SketchAsyncPlugin */,
 				1A8BAF461E83D2A000BD0591 /* Products */,
+				1A1482831E8BA5CF00C71FE1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,6 +177,7 @@
 		1A8BAF521E83D2A000BD0591 /* SketchAsyncTests */ = {
 			isa = PBXGroup;
 			children = (
+				1A14827F1E8BA34D00C71FE1 /* SketchAsyncTests.js */,
 				1A8BAF531E83D2A000BD0591 /* SketchAsyncTests.m */,
 				1A8BAF551E83D2A000BD0591 /* Info.plist */,
 			);
@@ -210,11 +235,11 @@
 				1A8BAF4A1E83D2A000BD0591 /* Sources */,
 				1A8BAF4B1E83D2A000BD0591 /* Frameworks */,
 				1A8BAF4C1E83D2A000BD0591 /* Resources */,
+				1A1482891E8BAD9000C71FE1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1A8BAF511E83D2A000BD0591 /* PBXTargetDependency */,
 			);
 			name = SketchAsyncTests;
 			productName = SketchAsyncTests;
@@ -296,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1482801E8BA34D00C71FE1 /* SketchAsyncTests.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,11 +378,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1A8BAF511E83D2A000BD0591 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1A8BAF441E83D2A000BD0591 /* SketchAsync */;
-			targetProxy = 1A8BAF501E83D2A000BD0591 /* PBXContainerItemProxy */;
-		};
 		1A8BAF801E83D56A00BD0591 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1A8BAF441E83D2A000BD0591 /* SketchAsync */;
@@ -508,8 +529,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SketchAsyncTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.magicsketch.SketchAsyncTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -519,8 +544,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SketchAsyncTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.magicsketch.SketchAsyncTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

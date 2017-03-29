@@ -15,7 +15,7 @@
 
 @implementation SketchAsyncHelper
 
-+ (JSValue *)callJavaScriptFunction:(MOJavaScriptObject*)object withArgumentsInArray:(NSArray *)args {
++ (JSValue *)callJavaScriptFunction:(MOJavaScriptObject *)object withArgumentsInArray:(NSArray *)args {
 
     JSContext *ctx = [JSContext contextWithJSGlobalContextRef:(JSGlobalContextRef)object.JSContext];
     JSObjectRef fn = [object JSObject];
@@ -23,6 +23,14 @@
     JSValue *result = [value callWithArguments:args];
 
     return result;
+}
+
++ (void)callSketchActionID:(NSString *)actionID info:(NSDictionary *)info {
+
+}
+
++ (void)callJavaScriptFunctionInBackground:(MOJavaScriptObject *)object completion:(MOJavaScriptObject *)completion {
+    
 }
 
 @end

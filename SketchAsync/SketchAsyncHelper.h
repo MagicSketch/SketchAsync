@@ -13,5 +13,6 @@
 @interface SketchAsyncHelper : NSObject
 
 + (JSValue *)callJavaScriptFunction:(MOJavaScriptObject*)object withArgumentsInArray:(NSArray *)args;
++ (void)callSketchActionID:(NSString *)actionID info:(NSDictionary *)info;
 
 @end

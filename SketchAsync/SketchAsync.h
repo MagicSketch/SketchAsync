@@ -16,7 +16,22 @@ FOUNDATION_EXPORT const unsigned char SketchAsyncVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SketchAsync/PublicHeader.h>
 
+#import <Mocha/Mocha.h>
+@import JavaScriptCore;
+
+/*
+@protocol SketchAsync <JSExport>
+
+JSExportAs(background,
+- (void)runInBackground:(MOJavaScriptObject *)closure onCompletion:(MOJavaScriptObject *)completion
+);
+
+@end
+*/
 
 @interface SketchAsync : NSObject
+
+- (void)runInBackground:(MOJavaScriptObject *)closure onCompletion:(MOJavaScriptObject *)completion;
+- (void)runInBackground:(MOJavaScriptObject *)closure callbackActionID:(NSString *)callbackActionID;
 
 @end
