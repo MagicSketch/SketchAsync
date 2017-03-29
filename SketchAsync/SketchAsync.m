@@ -10,8 +10,18 @@
 @import AppKit;
 @import JavaScriptCore;
 #import "SketchAsyncHelper.h"
+#import <Mocha/MOJavaScriptObject.h>
 
 #define SALog(fmt, ...) NSLog((@"SketchAsync (Sketch Plugin) %s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+// http://stackoverflow.com/questions/7017281/performselector-may-cause-a-leak-because-its-selector-is-unknown \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
 
 @implementation SketchAsync
 
@@ -53,7 +63,9 @@
         NSLog(@"pluginManager: %@", pluginManager);
         NSLog(@"context: %@", context);
 
-        [pluginManager performSelector:NSSelectorFromString(@"sendToInterestedCommandsActionWithID:context:") withObject:actionID withObject:context];
+        SuppressPerformSelectorLeakWarning(
+            [pluginManager performSelector:NSSelectorFromString(@"sendToInterestedCommandsActionWithID:context:") withObject:actionID withObject:context];
+                                           );
 
     });
 
@@ -62,29 +74,40 @@
 
 - (void)runSomethingInBackgroundForSeconds:(NSTimeInterval)seconds closure:(MOJavaScriptObject *)closure {
 
-    NSString *stringResult = [SketchAsyncHelper callJavaScriptObject:closure withArgumentsInArray:@[@2, @3]];
+    JSValue *value = [SketchAsyncHelper callJavaScriptFunction:closure withArgumentsInArray:@[@2, @3]];
+
+    NSString *stringResult = [value toString];
 
     NSLog(@"result %@", stringResult);
 }
 
 
 - (void)runSomethingInBackground:(MOJavaScriptObject *)closure onCompletion:(MOJavaScriptObject *)completion {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
+/*
+    NSArray *args = @[@1, @3];
+    JSContext *ctx = [JSContext contextWithJSGlobalContextRef:(JSGlobalContextRef)closure.JSContext];
+    JSObjectRef fn = [closure JSObject];
+    JSValue *value = [JSValue valueWithJSValueRef:fn inContext:ctx];
+*/
+      JSValue *value = [SketchAsyncHelper callJavaScriptFunction:closure
+                                            withArgumentsInArray:@[@1, @3]];
+
+      dispatch_async(dispatch_get_main_queue(), ^{
+        // completion
+        // http://gist.github.com/matt-curtis/4d
 
 
-//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        // execute closure
+          /*JSValue *result = [value callWithArguments:args];
+        NSString *stringResult = [result toString];
 
-        NSString *stringResult = [SketchAsyncHelper callJavaScriptObject:closure withArgumentsInArray:@[]];
+          NSLog(@"stringResult: %@", stringResult);
+*/
 
- //      dispatch_async(dispatch_get_main_queue(), ^{
-            // completion
-
-            [SketchAsyncHelper callJavaScriptObject:completion withArgumentsInArray:@[stringResult]];
-
-            NSLog(@"finished running something asynchroniously");
-//        });
-//    });
+          [SketchAsyncHelper callJavaScriptFunction:completion
+                               withArgumentsInArray:@[[value toString]]];
+        });
+    });
 }
-
 
 @end

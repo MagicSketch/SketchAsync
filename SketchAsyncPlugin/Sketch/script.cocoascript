@@ -4,7 +4,6 @@ var onRun = function(context) {
     context.document.showMessage("onRun");
 };
 
-
 var onRunObjc = function(context) {
     var async = SketchAsync.alloc().init();
     var message = async.runSomething();
@@ -26,15 +25,6 @@ var onSketchAsyncFinish = function(context) {
 
 var onRunObjcAsyncCompletionBlock = function(context) {
 
-    var dictionary = NSMutableDictionary.alloc().init()
-dictionary.setValue_forKey_(function run() {
-log("something");
-}, "block")
-
-log("dict: " + dictionary);
-log("block: " + dictionary.block);
-
-
     context.document.showMessage("running async for 3 seconds...");
     var async = SketchAsync.alloc().init();
     /*
@@ -46,11 +36,15 @@ log("block: " + dictionary.block);
         });
     */
 
-    async.runSomethingInBackground_onCompletion_(function () {
+    coscript.setShouldKeepAround(true);
+    async.runSomethingInBackground_onCompletion_(function (a, b) {
         log("running runSomethingInBackground_onCompletion_");
-        return 6;
+        return a + b;
     },
     function(result) {
+
+
+        coscript.setShouldKeepAround(false);
         log("onCompletion: " + result);
     });
 

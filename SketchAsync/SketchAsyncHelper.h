@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mocha/Mocha.h>
+@import JavaScriptCore;
 
 @interface SketchAsyncHelper : NSObject
+
++ (JSValue *)callJavaScriptFunction:(MOJavaScriptObject*)object withArgumentsInArray:(NSArray *)args;
 
 @end
