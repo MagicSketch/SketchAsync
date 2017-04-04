@@ -11,7 +11,15 @@
 #import <Mocha/MOClosure.h>
 #import <Mocha/MOJavaScriptObject.h>
 #import <Mocha/MochaRuntime_Private.h>
+#import <CocoaScript/COScript.h>
 
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
 
 @implementation SketchAsyncHelper
 
@@ -27,10 +35,22 @@
 
 + (void)callSketchActionID:(NSString *)actionID info:(NSDictionary *)info {
 
-}
+    NSObject *appController = [[NSApplication sharedApplication] valueForKey:@"delegate"];
+    NSObject *pluginManager = [appController valueForKeyPath:@"pluginManager"];
+    NSDictionary *pluginContext = [appController valueForKeyPath:@"pluginContext"];
 
-+ (void)callJavaScriptFunctionInBackground:(MOJavaScriptObject *)object completion:(MOJavaScriptObject *)completion {
-    
+
+    NSMutableDictionary *context = [NSMutableDictionary dictionaryWithDictionary:pluginContext];
+
+    NSLog(@"pluginManager: %@", pluginManager);
+    NSLog(@"context: %@", context);
+
+    [context addEntriesFromDictionary:info];
+
+    SuppressPerformSelectorLeakWarning(
+    [pluginManager performSelector:NSSelectorFromString(@"sendToInterestedCommandsActionWithID:context:") withObject:actionID withObject:context];
+                                     );
+
 }
 
 @end

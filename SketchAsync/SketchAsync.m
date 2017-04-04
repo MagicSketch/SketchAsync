@@ -51,6 +51,13 @@ _Pragma("clang diagnostic pop") \
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(seconds * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 
         NSString *actionID = @"SketchAsync.finish";
+
+        [SketchAsyncHelper callSketchActionID:actionID
+                                         info:@{
+                                                @"SketchAsyncDuration": @(seconds)
+                                                }];
+        /*
+        NSString *actionID = @"SketchAsync.finish";
         NSObject *appController = [NSClassFromString(@"AppController") valueForKeyPath:@"sharedInstance"];
         NSObject *pluginManager = [appController valueForKeyPath:@"pluginManager"];
         NSDictionary *pluginContext = [appController valueForKeyPath:@"pluginContext"];
@@ -66,7 +73,7 @@ _Pragma("clang diagnostic pop") \
         SuppressPerformSelectorLeakWarning(
             [pluginManager performSelector:NSSelectorFromString(@"sendToInterestedCommandsActionWithID:context:") withObject:actionID withObject:context];
                                            );
-
+*/
     });
 
 }
@@ -96,6 +103,18 @@ _Pragma("clang diagnostic pop") \
           [SketchAsyncHelper callJavaScriptFunction:completion
                                withArgumentsInArray:@[value]];
 
+        });
+    });
+}
+
+- (void)runInBackground:(MOJavaScriptObject *)closure callbackActionID:(NSString *)callbackActionID {
+
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        JSValue *value = [SketchAsyncHelper callJavaScriptFunction:closure
+                                              withArgumentsInArray:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SketchAsyncHelper callSketchActionID:callbackActionID
+                                             info:@{@"result":value}];
         });
     });
 }
