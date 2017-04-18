@@ -14,7 +14,7 @@
 		1A14828C1E8BAE7700C71FE1 /* CocoaScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A14828B1E8BAE7700C71FE1 /* CocoaScript.framework */; };
 		1A14828D1E8BAE8900C71FE1 /* CocoaScript.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A14828B1E8BAE7700C71FE1 /* CocoaScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A14828E1E8D0A5E00C71FE1 /* CocoaScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A14828B1E8BAE7700C71FE1 /* CocoaScript.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		1A5E0E791E89324900636379 /* SketchAsyncHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A5E0E771E89324900636379 /* SketchAsyncHelper.h */; };
+		1A5E0E791E89324900636379 /* SketchAsyncHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A5E0E771E89324900636379 /* SketchAsyncHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A5E0E7A1E89324900636379 /* SketchAsyncHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5E0E781E89324900636379 /* SketchAsyncHelper.m */; };
 		1A8BAF4F1E83D2A000BD0591 /* SketchAsync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8BAF451E83D2A000BD0591 /* SketchAsync.framework */; };
 		1A8BAF541E83D2A000BD0591 /* SketchAsyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8BAF531E83D2A000BD0591 /* SketchAsyncTests.m */; };

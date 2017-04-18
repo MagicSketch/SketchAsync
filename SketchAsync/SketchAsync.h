@@ -34,4 +34,8 @@ JSExportAs(background,
 - (void)runInBackground:(MOJavaScriptObject *)closure onCompletion:(MOJavaScriptObject *)completion;
 - (void)runInBackground:(MOJavaScriptObject *)closure callbackActionID:(NSString *)callbackActionID;
 
+
++ (JSValue *)callJavaScriptFunction:(MOJavaScriptObject*)object withArgumentsInArray:(NSArray *)args;
++ (void)callSketchActionID:(NSString *)actionID info:(NSDictionary *)info;
+
 @end

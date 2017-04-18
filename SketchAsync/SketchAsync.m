@@ -23,11 +23,23 @@ Stuff; \
 _Pragma("clang diagnostic pop") \
 } while (0)
 
+
+@interface SketchAsync ()
+
+@property (nonatomic, strong) NSMutableDictionary *operations;
+@property (nonatomic, strong) NSOperationQueue *backgroundQueue;
+
+@end
+
 @implementation SketchAsync
 
-- (NSString *)runSomething {
-    SALog(@"runSomething");
-    return @"runSomething";
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.operations = [NSMutableDictionary dictionary];
+        self.backgroundQueue = [[NSOperationQueue alloc] init];
+    }
+    return self;
 }
 
 - (void)runInBackgroundForSeconds:(NSTimeInterval)seconds {
@@ -89,23 +101,73 @@ _Pragma("clang diagnostic pop") \
 }
 
 // Make sure to call coscript.setShouldKeepAround(true)
+
 - (void)runInBackground:(MOJavaScriptObject *)closure onCompletion:(MOJavaScriptObject *)completion {
+    [self runInBackground:closure onCompletion:completion withIdentifier:[[NSDate date] description]];
+}
 
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+// Make sure to call coscript.setShouldKeepAround(true)
+- (void)runInBackground:(MOJavaScriptObject *)closure onCompletion:(MOJavaScriptObject *)completion withIdentifier:(NSString *)identifier {
 
-      JSValue *value = [SketchAsyncHelper callJavaScriptFunction:closure
-                                            withArgumentsInArray:nil];
+    __weak __typeof (self) weakSelf = self;
+    __block NSBlockOperation *operation = self.operations[identifier];
+    __block BOOL isCancelled = NO;
 
-      dispatch_async(dispatch_get_main_queue(), ^{
-        // completion
-        // http://gist.github.com/matt-curtis/4d
+    if (operation) {
+        NSLog(@"cancelling %@ %@", operation, identifier);
+        [operation cancel];
+        self.operations[identifier] = nil;
+        isCancelled = YES;
+        NSLog(@"cancelled %d %@", [operation isCancelled], identifier);
+    }
 
-          [SketchAsyncHelper callJavaScriptFunction:completion
-                               withArgumentsInArray:@[value]];
+    operation = [[NSBlockOperation alloc] init];
+    __weak NSBlockOperation *weakOperation = operation;
+
+    [operation addExecutionBlock:^{
+
+        JSValue *value = [SketchAsyncHelper callJavaScriptFunction:closure
+                                              withArgumentsInArray:@[identifier]];
+
+        if (isCancelled) {
+            NSLog(@"1 operation is cancelled %@", identifier);
+            weakSelf.operations[identifier] = nil;
+            return;
+        }
+
+        if ([weakOperation isCancelled]) {
+            NSLog(@"4 operation is cancelled %@", identifier);
+            weakSelf.operations[identifier] = nil;
+            return;
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            if (isCancelled) {
+                NSLog(@"2 operation is cancelled %@", identifier);
+                return;
+            }
+
+            NSLog(@"running %@", identifier);
+
+            // completion
+            // http://gist.github.com/matt-curtis/4d
+
+            [SketchAsyncHelper callJavaScriptFunction:completion
+                                 withArgumentsInArray:@[value, identifier]];
+
+            weakSelf.operations[identifier] = nil;
 
         });
-    });
+        
+    }];
+
+    
+    self.operations[identifier] = operation;
+
+    [_backgroundQueue addOperation:operation];
 }
+
 
 - (void)runInBackground:(MOJavaScriptObject *)closure callbackActionID:(NSString *)callbackActionID {
 
@@ -133,5 +195,23 @@ _Pragma("clang diagnostic pop") \
 }
 
  */
+
++ (JSValue *)callJavaScriptFunction:(MOJavaScriptObject*)object withArgumentsInArray:(NSArray *)args {
+    return [SketchAsyncHelper callJavaScriptFunction:object withArgumentsInArray:args];
+}
+
++ (void)callSketchActionID:(NSString *)actionID info:(NSDictionary *)info {
+    return [SketchAsyncHelper callSketchActionID:actionID info:info];
+}
+
+
+- (void)dealloc {
+    [[self.operations allValues] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSBlockOperation *operation = obj;
+        if ( ! [operation isFinished] && ! [operation isCancelled]) {
+            [operation cancel];
+        }
+    }];
+}
 
 @end
